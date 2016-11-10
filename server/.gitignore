@@ -5,11 +5,11 @@ __pycache__/
 
 # C extensions
 *.so
-db/
-# Distribution / packaging
 
+# Distribution / packaging
 .Python
 env/
+db/
 build/
 develop-eggs/
 dist/

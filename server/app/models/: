@@ -1,0 +1,14 @@
+from .. import db
+
+
+class Reading(db.Model):
+
+    moment = db.Column(db.DateTime, primary_key=True)
+    source_id = db.Column(db.Integer, primary_key=True,
+		       default=1, db.ForeignKey('source.id'))
+    source = db.relationship('Source', back_populates='readings', lazy=True)
+    temperature = db.Column(db.Float)
+    humidity = db.Column(db.Float)
+
+    def __repr__(self):
+        return 'Reading {}>'.format(self.id)
